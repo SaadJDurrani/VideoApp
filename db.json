@@ -1,0 +1,81 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "saad",
+      "lastname": "khan",
+      "email": "S123@",
+      "password": "123",
+      "liked": []
+    },
+    {
+      "id": 2,
+      "firstname": "laiba",
+      "lastname": "gul",
+      "email": "L123@",
+      "password": "123",
+      "liked": []
+    },
+    {
+      "id": 3,
+      "firstname": "marwa",
+      "lastname": "midrar",
+      "email": "M123@",
+      "password": "123",
+      "liked": []
+    }
+  ],
+
+  "videos": [
+    {
+      "id": "1",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "title": "Amazing Nature"
+    },
+    {
+      "id": "2",
+      "videoUrl": "https://www.w3schools.com/html/movie.mp4",
+      "title": "Wildlife Documentary"
+    },
+    {
+      "id": "3",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "title": "City Life"
+    },
+    {
+      "id": "4",
+      "videoUrl": "https://www.w3schools.com/html/movie.mp4",
+      "title": "Underwater World"
+    },
+    {
+      "id": "5",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "title": "Mountain Adventure"
+    },
+    {
+      "id": "6",
+      "videoUrl": "https://www.w3schools.com/html/movie.mp4",
+      "title": "Space Exploration"
+    },
+    {
+      "id": "7",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "title": "Desert Journey"
+    },
+    {
+      "id": "8",
+      "videoUrl": "https://www.w3schools.com/html/movie.mp4",
+      "title": "Forest Hike"
+    },
+    {
+      "id": "9",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "title": "Ocean Waves"
+    },
+    {
+      "id": "10",
+      "videoUrl": "https://www.w3schools.com/html/movie.mp4",
+      "title": "Cultural Festivities"
+    }
+  ]
+}
