@@ -27,15 +27,15 @@ export const getVideoUrlById = async (id: string): Promise<string> => {
 export const LIKED_VIDEOS: TVideo[] = [
   {
     id: "1",
-    title: "Video 1",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    title: "Amazing Nature",
     thumbnailUrl: "https://via.placeholder.com/150",
-    videoUrl: "https://www.example.com/video1",
   },
   {
     id: "2",
-    title: "Video 2",
+    videoUrl: "https://www.w3schools.com/html/movie.mp4",
+    title: "Wildlife Documentary",
     thumbnailUrl: "https://via.placeholder.com/150",
-    videoUrl: "https://www.example.com/video2",
   },
 ];
 
@@ -43,26 +43,50 @@ export const VIDEOS: TVideo[] = [
   ...LIKED_VIDEOS,
   {
     id: "3",
-    title: "Video 3",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    title: "City Life",
     thumbnailUrl: "https://via.placeholder.com/150",
-    videoUrl: "https://www.example.com/video3",
   },
   {
     id: "4",
-    title: "Video 4",
+    videoUrl: "https://www.w3schools.com/html/movie.mp4",
+    title: "Underwater World",
     thumbnailUrl: "https://via.placeholder.com/150",
-    videoUrl: "https://www.example.com/video1",
   },
   {
     id: "5",
-    title: "Video 5",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    title: "Mountain Adventure",
     thumbnailUrl: "https://via.placeholder.com/150",
-    videoUrl: "https://www.example.com/video2",
   },
   {
     id: "6",
-    title: "Video 6",
+    videoUrl: "https://www.w3schools.com/html/movie.mp4",
+    title: "Space Exploration",
     thumbnailUrl: "https://via.placeholder.com/150",
-    videoUrl: "https://www.example.com/video3",
+  },
+  {
+    id: "7",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    title: "Desert Journey",
+    thumbnailUrl: "https://via.placeholder.com/150",
+  },
+  {
+    id: "8",
+    videoUrl: "https://www.w3schools.com/html/movie.mp4",
+    title: "Forest Hike",
+    thumbnailUrl: "https://via.placeholder.com/150",
+  },
+  {
+    id: "9",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    title: "Ocean Waves",
+    thumbnailUrl: "https://via.placeholder.com/150",
+  },
+  {
+    id: "10",
+    videoUrl: "https://www.w3schools.com/html/movie.mp4",
+    title: "Cultural Festivities",
+    thumbnailUrl: "https://via.placeholder.com/150",
   },
 ];

@@ -11,7 +11,7 @@ import { TVideo } from "src/typings/video.type";
 const Thumbnail = (video: TVideo) => {
   return (
     <Card>
-      <CardActionArea href={video.videoUrl} target="_blank">
+      <CardActionArea href={"/player/" + video.id}>
         <CardMedia
           component="img"
           height="140"
