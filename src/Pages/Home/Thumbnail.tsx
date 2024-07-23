@@ -15,7 +15,7 @@ const Thumbnail = (video: TVideo) => {
         <CardMedia
           component="img"
           height="140"
-          image={video.thubmnailUrl}
+          image={video.thumbnailUrl}
           alt={video.title}
         />
         <CardContent>

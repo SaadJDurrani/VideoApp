@@ -28,13 +28,13 @@ export const LIKED_VIDEOS: TVideo[] = [
   {
     id: "1",
     title: "Video 1",
-    thubmnailUrl: "https://via.placeholder.com/150",
+    thumbnailUrl: "https://via.placeholder.com/150",
     videoUrl: "https://www.example.com/video1",
   },
   {
     id: "2",
     title: "Video 2",
-    thubmnailUrl: "https://via.placeholder.com/150",
+    thumbnailUrl: "https://via.placeholder.com/150",
     videoUrl: "https://www.example.com/video2",
   },
 ];
@@ -44,25 +44,25 @@ export const VIDEOS: TVideo[] = [
   {
     id: "3",
     title: "Video 3",
-    thubmnailUrl: "https://via.placeholder.com/150",
+    thumbnailUrl: "https://via.placeholder.com/150",
     videoUrl: "https://www.example.com/video3",
   },
   {
     id: "4",
     title: "Video 4",
-    thubmnailUrl: "https://via.placeholder.com/150",
+    thumbnailUrl: "https://via.placeholder.com/150",
     videoUrl: "https://www.example.com/video1",
   },
   {
     id: "5",
     title: "Video 5",
-    thubmnailUrl: "https://via.placeholder.com/150",
+    thumbnailUrl: "https://via.placeholder.com/150",
     videoUrl: "https://www.example.com/video2",
   },
   {
     id: "6",
     title: "Video 6",
-    thubmnailUrl: "https://via.placeholder.com/150",
+    thumbnailUrl: "https://via.placeholder.com/150",
     videoUrl: "https://www.example.com/video3",
   },
 ];
