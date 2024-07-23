@@ -1,20 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+import { CustomTheme } from "./CustomTheme/CustomeTheme";
 import Login from "./Pages/Auth/Login";
 import SignUp from "./Pages/Auth/SignUp";
 import Home from "./Pages/Home/Home";
 import Player from "./Pages/Player/Player";
 import Profile from "./Pages/Profile/Profile";
-import { CustomTheme } from "./CustomTheme/CustomeTheme";
 
 function App() {
   return (
-    <>
-    <CustomTheme> 
+    <CustomTheme>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
           <Route path="/player" element={<Player />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/signup" element={<SignUp />} />
@@ -22,7 +19,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </CustomTheme>
-    </>
   );
 }
 

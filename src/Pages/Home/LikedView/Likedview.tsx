@@ -1,19 +1,12 @@
-import { List, ListItem, ListItemText } from "@mui/material";
-import { videos } from "src/utils/Api.util";
+import { List } from "@mui/material";
+import { LIKED_VIDEOS } from "src/utils/Api.util";
+import Liked from "./Liked";
 
 const LikedView = () => {
   return (
     <List>
-      {videos.map((video) => (
-        <ListItem
-          button
-          component="a"
-          href={video.videoUrl}
-          target="_blank"
-          key={video.id}
-        >
-          <ListItemText primary={video.title} />
-        </ListItem>
+      {LIKED_VIDEOS.map((video) => (
+        <Liked {...video} />
       ))}
     </List>
   );

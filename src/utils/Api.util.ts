@@ -23,8 +23,8 @@ export const getVideoUrlById = async (id: string): Promise<string> => {
     throw error;
   }
 };
-// src/data/videos.ts
-export const videos: TVideo[] = [
+
+export const LIKED_VIDEOS: TVideo[] = [
   {
     id: "1",
     title: "Video 1",
@@ -37,11 +37,32 @@ export const videos: TVideo[] = [
     thubmnailUrl: "https://via.placeholder.com/150",
     videoUrl: "https://www.example.com/video2",
   },
+];
+
+export const VIDEOS: TVideo[] = [
+  ...LIKED_VIDEOS,
   {
     id: "3",
     title: "Video 3",
     thubmnailUrl: "https://via.placeholder.com/150",
     videoUrl: "https://www.example.com/video3",
   },
-  // Add more videos as needed
+  {
+    id: "4",
+    title: "Video 4",
+    thubmnailUrl: "https://via.placeholder.com/150",
+    videoUrl: "https://www.example.com/video1",
+  },
+  {
+    id: "5",
+    title: "Video 5",
+    thubmnailUrl: "https://via.placeholder.com/150",
+    videoUrl: "https://www.example.com/video2",
+  },
+  {
+    id: "6",
+    title: "Video 6",
+    thubmnailUrl: "https://via.placeholder.com/150",
+    videoUrl: "https://www.example.com/video3",
+  },
 ];

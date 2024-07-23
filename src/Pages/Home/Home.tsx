@@ -1,21 +1,21 @@
+import { Grid } from "@mui/material";
+import { VIDEOS } from "src/utils/Api.util";
 import LikedView from "./LikedView/Likedview";
 import Thumbnail from "./Thumbnail";
-import { Grid, Box } from "@mui/material";
 
 export default function Home() {
   return (
-    <>
-      <Box>
-      <h1>Home Page</h1>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={8}>
-          <Thumbnail />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <LikedView />
-        </Grid>
+    <Grid container spacing={2} p={2}>
+      <Grid item xs={12} md={3}>
+        <LikedView />
       </Grid>
-    </Box>
-    </>
+      <Grid item container xs={12} md={9} spacing={2}>
+        {VIDEOS.map((v) => (
+          <Grid item xs={12} md={3}>
+            <Thumbnail {...v} />
+          </Grid>
+        ))}
+      </Grid>
+    </Grid>
   );
 }
