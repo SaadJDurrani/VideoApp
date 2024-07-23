@@ -1,4 +1,3 @@
-// src/components/Thumbnail.tsx
 import {
   Card,
   CardActionArea,
@@ -6,26 +5,27 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 import { TVideo } from "src/typings/video.type";
 
-const Thumbnail = (video: TVideo) => {
+function Thumbnail(video: TVideo) {
   return (
     <Card>
-      <CardActionArea href={"/player/" + video.id}>
+      <CardActionArea component={Link} to={`/player/${video.id}`}>
         <CardMedia
           component="img"
           height="140"
           image={video.thumbnailUrl}
           alt={video.title}
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {video.title}
-          </Typography>
-        </CardContent>
       </CardActionArea>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {video.title}
+        </Typography>
+      </CardContent>
     </Card>
   );
-};
+}
 
 export default Thumbnail;

@@ -1,27 +1,14 @@
 import axios from "axios";
 import { TVideo } from "../typings/video.type";
+import { Base_URL } from "src/MagicStrings/MagicUrl";
 
-export async function getallvideosUrl(): Promise<TVideo[]> {
-  const res = await axios.get<TVideo[]>("http://localhost:3000/videos");
+export async function getallVideos(): Promise<TVideo[]> {
+  const res = await axios.get<TVideo[]>(`${Base_URL}/videos`);
   return res.data;
 }
-
-export const getVideoUrlById = async (id: string): Promise<string> => {
-  try {
-    const response = await axios.get<{ videos: TVideo[] }>(
-      "http://localhost:3001/videos"
-    );
-    const videos = response.data.videos;
-    const video = videos.find((video) => video.id === id);
-    if (video) {
-      return video.videoUrl;
-    } else {
-      throw new Error(`Video with ID ${id} not found`);
-    }
-  } catch (error) {
-    console.error(`Error fetching video URL for ID ${id}:`, error);
-    throw error;
-  }
+export const getVideoById = async (id: string): Promise<TVideo> => {
+  const res = await axios.get<TVideo>(`${Base_URL}/videos/${id}`);
+  return res.data;
 };
 
 export const LIKED_VIDEOS: TVideo[] = [

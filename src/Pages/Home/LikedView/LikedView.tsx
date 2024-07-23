@@ -6,7 +6,7 @@ const LikedView = () => {
   return (
     <List>
       {LIKED_VIDEOS.map((video) => (
-        <Liked {...video} />
+        <Liked key={video.id} {...video} />
       ))}
     </List>
   );

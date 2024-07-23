@@ -7,6 +7,8 @@ import Player from "./Pages/Player/Player";
 import Profile from "./Pages/Profile/Profile";
 
 function App() {
+  console.log("🔴 App Rerendered!!!");
+
   return (
     <CustomTheme>
       <BrowserRouter>
@@ -16,6 +18,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          <Route path="*" element={<h1>404</h1>} />
         </Routes>
       </BrowserRouter>
     </CustomTheme>
