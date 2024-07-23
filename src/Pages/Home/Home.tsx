@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { VIDEOS } from "src/utils/Api.util";
-import LikedView from "./LikedView/Likedview";
+import LikedView from "./LikedView/LikedView";
 import Thumbnail from "./Thumbnail";
 
 export default function Home() {
