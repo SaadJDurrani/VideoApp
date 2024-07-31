@@ -23,7 +23,3 @@ export type LikedProps = {
 export type GuardProp = {
   children: ReactNode;
 };
-export type GlobalArray = {
-  globalArray: string[];
-  setGlobalArray: (likedArray: string[]) => void;
-};

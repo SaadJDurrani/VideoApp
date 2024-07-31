@@ -1,11 +1,12 @@
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { GlobalArray, TVideo } from "src/typings/video.type";
+import { TVideo } from "src/typings/video.type";
 import Liked from "./LikedView/Liked";
-interface ThumbnailProps extends GlobalArray {
+interface ThumbnailProps {
   video: TVideo;
+  isLoggedIn: boolean;
 }
-function Thumbnail({ video, globalArray, setGlobalArray }: ThumbnailProps) {
+function Thumbnail({ video, isLoggedIn }: ThumbnailProps) {
   console.log("Thumbnail");
   return (
     <Card>
@@ -16,7 +17,7 @@ function Thumbnail({ video, globalArray, setGlobalArray }: ThumbnailProps) {
         <Typography gutterBottom variant="h5" component="div">
           {video.title}
         </Typography>
-        <Liked videoId={video.id} globalArray={globalArray} setGlobalArray={setGlobalArray} />
+        {isLoggedIn && <Liked videoId={video.id} />}
       </CardContent>
     </Card>
   );

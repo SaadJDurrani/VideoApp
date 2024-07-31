@@ -8,12 +8,15 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
 import { type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAppDispatch } from "src/Store/hooks";
+import { setUser } from "src/Store/userSlice";
 import { TLogin } from "src/typings/video.type";
 import { authenticateUser } from "src/utils/Api.util";
 import { setLoggedInUser } from "src/utils/Local.util";
 
 export default function Login() {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   async function submitHandler(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
@@ -25,6 +28,7 @@ export default function Login() {
 
     if (found) {
       setLoggedInUser(found);
+      dispatch(setUser(found));
       navigate(new URLSearchParams(window.location.search).get("from") || "/");
     } else {
       alert("Invalid email or password");

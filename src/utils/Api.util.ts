@@ -19,7 +19,8 @@ export const getUserById = async (id: string): Promise<TUser> => {
   return res.data;
 };
 export const updateUserLikedVideosById = async (id: string, LikedVideos: string[]): Promise<void> => {
-  axios.patch(`${Base_URL}/users/${id}`, { Liked: LikedVideos });
+  console.log(`Updating user with id: ${id} and likedVideos: ${JSON.stringify(LikedVideos)}`);
+  await axios.patch(`${Base_URL}/users/${id}`, { Liked: LikedVideos });
 };
 export const authenticateUser = async (formProps: TLogin): Promise<TUser | null> => {
   const users = await getAllUsers();

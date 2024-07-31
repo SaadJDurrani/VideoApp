@@ -1,16 +1,17 @@
 import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { GlobalArray, TVideo } from "src/typings/video.type";
-import { getLoggedInUser } from "src/utils/Local.util";
-interface HomeProps extends GlobalArray {
+import { useAppSelector } from "src/Store/hooks";
+import { RootState } from "src/Store/store";
+import { TVideo } from "src/typings/video.type";
+interface HomeProps {
   videos: TVideo[];
 }
 
 const LikedView = ({ videos }: HomeProps) => {
   console.log("LikedView Rendered");
-  const user = getLoggedInUser();
+  const userLiked = useAppSelector((state: RootState) => state.user.Liked);
 
-  const filteredVideos = videos.filter((video) => user?.Liked.includes(video.id));
+  const filteredVideos = videos.filter((video) => userLiked.includes(video.id));
   const navigate = useNavigate();
   function handleVideoClick(videoId: String) {
     navigate(`/player/${videoId}`);

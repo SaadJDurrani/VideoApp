@@ -2,11 +2,11 @@ import { currentUserKey } from "src/MagicStrings/MagicUrl";
 import { TUser } from "src/typings/video.type";
 
 export function setLoggedInUser(user: TUser) {
-  return localStorage.setItem(currentUserKey, JSON.stringify(user));
+  localStorage.setItem(currentUserKey, JSON.stringify({ id: user.id, email: user.email }));
 }
 export function getLoggedInUser(): TUser | null {
   const userString = localStorage.getItem(currentUserKey);
-  if (userString) return JSON.parse(userString);
+  if (userString && userString !== "undefined") return JSON.parse(userString);
   return null;
 }
 export function removeLoggedInUser() {

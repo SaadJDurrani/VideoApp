@@ -1,25 +1,27 @@
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Checkbox } from "@mui/material";
 import { ChangeEvent } from "react";
-import { GlobalArray, LikedProps } from "src/typings/video.type";
+import { useAppDispatch, useAppSelector } from "src/Store/hooks";
+import { RootState } from "src/Store/store";
+import { updateLikedVideos } from "src/Store/userSlice";
+import { LikedProps } from "src/typings/video.type";
 import { updateUserLikedVideosById } from "src/utils/Api.util";
-import { getLoggedInUser, setLoggedInUser } from "src/utils/Local.util";
 
-interface LikedComponentProps extends LikedProps, GlobalArray {}
-
-export default function Liked({ videoId, setGlobalArray }: LikedComponentProps) {
+export default function Liked({ videoId }: LikedProps) {
   console.log("Liked Rendered");
-  const user = getLoggedInUser();
+  const dispatch = useAppDispatch();
+  const user = useAppSelector((state: RootState) => state.user);
 
-  function handleChange(_e: ChangeEvent<HTMLInputElement>, checked: boolean): void {
+  async function handleChange(_e: ChangeEvent<HTMLInputElement>, checked: boolean) {
     if (user) {
       const updatedLikedVideos = checked ? [...user.Liked, videoId] : user.Liked.filter((id: string) => id !== videoId);
+      dispatch(updateLikedVideos(updatedLikedVideos));
 
-      updateUserLikedVideosById(user!.id, updatedLikedVideos).then(() => {
-        const updatedUser = { ...user, Liked: updatedLikedVideos };
-        setLoggedInUser(updatedUser);
-        setGlobalArray(updatedLikedVideos);
-      });
+      await updateUserLikedVideosById(user!.id, updatedLikedVideos);
+      // const updatedUser = { ...user, Liked: updatedLikedVideos };
+      //  dispatch(updateLikedVideos(updatedLikedVideos));
+      // setLoggedInUser(updatedUser);
+      // setGlobalArray(updatedLikedVideos);
     }
   }
   if (!user) return <></>;

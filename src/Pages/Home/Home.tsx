@@ -1,18 +1,20 @@
 import { AppBar, Box, Button, CircularProgress, Grid, Toolbar, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { GlobalArray, TVideo } from "src/typings/video.type";
+import { Link } from "react-router-dom";
+import { useAppDispatch } from "src/Store/hooks";
+import { logout } from "src/Store/userSlice";
+import { TVideo } from "src/typings/video.type";
 import { getallVideos } from "src/utils/Api.util";
 import { getLoggedInUser, removeLoggedInUser } from "src/utils/Local.util";
 import LikedView from "./LikedView/LikedView";
 import Thumbnail from "./Thumbnail";
 
-export default function Home({ globalArray, setGlobalArray }: GlobalArray) {
+export default function Home() {
   console.log("Home Rendered");
   const [videos, setVideos] = useState<TVideo[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const fetchVideos = async () => {
     const response = await getallVideos();
@@ -31,7 +33,7 @@ export default function Home({ globalArray, setGlobalArray }: GlobalArray) {
   function handleLogout() {
     removeLoggedInUser();
     setIsLoggedIn(false);
-    navigate("/");
+    dispatch(logout());
   }
 
   return (
@@ -64,7 +66,7 @@ export default function Home({ globalArray, setGlobalArray }: GlobalArray) {
       </AppBar>
       <Grid container spacing={2} p={2}>
         <Grid item xs={12} md={3} mt={5}>
-          {isLoggedIn && <LikedView videos={videos} globalArray={globalArray} setGlobalArray={setGlobalArray} />}
+          {isLoggedIn && <LikedView videos={videos} />}
         </Grid>
 
         <Grid item container xs={12} md={9} spacing={2}>
@@ -75,7 +77,7 @@ export default function Home({ globalArray, setGlobalArray }: GlobalArray) {
           ) : (
             videos.map((v) => (
               <Grid item key={v.id} xs={12} md={3}>
-                <Thumbnail video={v} globalArray={globalArray} setGlobalArray={setGlobalArray} />
+                <Thumbnail video={v} isLoggedIn={isLoggedIn} />
               </Grid>
             ))
           )}
