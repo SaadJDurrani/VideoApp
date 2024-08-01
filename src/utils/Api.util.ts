@@ -1,13 +1,13 @@
 import axios from "axios";
-import { Base_URL } from "src/MagicStrings/MagicUrl";
+import { Base_URL, Base_URL_Express } from "src/MagicStrings/MagicUrl";
 import { TLogin, TSignUp, TUser, TVideo } from "../typings/video.type";
 
 export async function getallVideos(): Promise<TVideo[]> {
-  const res = await axios.get<TVideo[]>(`${Base_URL}/videos`);
+  const res = await axios.get<TVideo[]>(`${Base_URL_Express}/videos`);
   return res.data;
 }
 export const getVideoById = async (id: string): Promise<TVideo> => {
-  const res = await axios.get<TVideo>(`${Base_URL}/videos/${id}`);
+  const res = await axios.get<TVideo>(`${Base_URL_Express}/videos/${id}`);
   return res.data;
 };
 export const getAllUsers = async (): Promise<TUser[]> => {

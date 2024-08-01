@@ -12,3 +12,7 @@ export function getLoggedInUser(): TUser | null {
 export function removeLoggedInUser() {
   localStorage.removeItem(currentUserKey);
 }
+export function getCurrentUserId(): string | null {
+  const userString = localStorage.getItem(currentUserKey);
+  return userString ? JSON.parse(userString).id : null;
+}

@@ -6,9 +6,23 @@ import SignUp from "./Pages/Auth/SignUp";
 import Home from "./Pages/Home/Home";
 import Player from "./Pages/Player/Player";
 import Profile from "./Pages/Profile/Profile";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setUser } from "./Store/userSlice";
+import { getUserById } from "./utils/Api.util";
+import { getCurrentUserId } from "./utils/Local.util";
 
 function App() {
   console.log("🔴 App Rerendered!!!");
+  const dispatch = useDispatch();
+  async function fetchUserData() {
+    const userId =getCurrentUserId()
+      const userData = await getUserById(userId!);
+      dispatch(setUser(userData));
+    }
+  useEffect(() => {
+    fetchUserData();
+  }, []);
 
   return (
     <CustomTheme>

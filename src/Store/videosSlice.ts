@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import { Base_URL } from "src/MagicStrings/MagicUrl";
+import { Base_URL_Express } from "src/MagicStrings/MagicUrl";
 import { TVideo } from "src/typings/video.type";
 
 type TStatus = "idle" | "loading" | "failed";
@@ -29,7 +29,7 @@ const videosSlice = createSlice({
 });
 
 export const getVideoByIdAsync = createAsyncThunk("fetchVideo", async (id: string) => {
-  const res = await axios.get<TVideo>(`${Base_URL}/videos/${id}`);
+  const res = await axios.get<TVideo>(`${Base_URL_Express}/videos/${id}`);
   return res.data;
 });
 export default videosSlice;
