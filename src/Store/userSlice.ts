@@ -8,7 +8,7 @@ function example(state: TUser) {
 }
 
 const initialState: TUser = {
-  id: "",
+  _id: "",
   firstName: "",
   lastName: "",
   email: "",

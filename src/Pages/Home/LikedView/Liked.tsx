@@ -17,7 +17,7 @@ export default function Liked({ videoId }: LikedProps) {
       const updatedLikedVideos = checked ? [...user.Liked, videoId] : user.Liked.filter((id: string) => id !== videoId);
       dispatch(updateLikedVideos(updatedLikedVideos));
 
-      await updateUserLikedVideosById(user!.id, updatedLikedVideos);
+      await updateUserLikedVideosById(user!._id, updatedLikedVideos);
       // const updatedUser = { ...user, Liked: updatedLikedVideos };
       //  dispatch(updateLikedVideos(updatedLikedVideos));
       // setLoggedInUser(updatedUser);

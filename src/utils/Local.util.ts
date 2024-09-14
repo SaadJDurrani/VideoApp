@@ -2,7 +2,7 @@ import { currentUserKey } from "src/MagicStrings/MagicUrl";
 import { TUser } from "src/typings/video.type";
 
 export function setLoggedInUser(user: TUser) {
-  localStorage.setItem(currentUserKey, JSON.stringify({ id: user.id, email: user.email }));
+  localStorage.setItem(currentUserKey, JSON.stringify({ id: user._id, email: user.email }));
 }
 export function getLoggedInUser(): TUser | null {
   const userString = localStorage.getItem(currentUserKey);

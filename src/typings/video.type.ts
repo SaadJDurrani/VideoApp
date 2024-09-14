@@ -1,14 +1,16 @@
 import { ReactNode } from "react";
 
 export type TVideo = {
-  Liked: never[];
+  // Liked: never[];
+  _id: string;
   id: string;
   videoUrl: string;
   thumbnailUrl: string;
   title: string;
+  __v: number;
 };
 export type TUser = {
-  id: string;
+  _id: string;
   firstName: string;
   lastName: string;
   email: string;

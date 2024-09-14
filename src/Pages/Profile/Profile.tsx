@@ -1,8 +1,8 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
-import { getLoggedInUser } from "src/utils/Local.util";
-
+import { useAppSelector } from "src/Store/hooks";
+import { RootState } from "src/Store/store";
 export default function Profile() {
-  const user = getLoggedInUser()!;
+  const user = useAppSelector((state: RootState) => state.user);
   return (
     <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh" p={2}>
       <Card sx={{ width: 1000, height: 500 }}>

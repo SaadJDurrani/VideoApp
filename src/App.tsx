@@ -16,10 +16,11 @@ function App() {
   console.log("🔴 App Rerendered!!!");
   const dispatch = useDispatch();
   async function fetchUserData() {
-    const userId =getCurrentUserId()
-      const userData = await getUserById(userId!);
-      dispatch(setUser(userData));
-    }
+    const userId = getCurrentUserId();
+    const userData = await getUserById(userId!);
+    console.log("userrrrr!!!!", userData);
+    dispatch(setUser(userData));
+  }
   useEffect(() => {
     fetchUserData();
   }, []);
