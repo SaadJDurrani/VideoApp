@@ -11,7 +11,7 @@ const LikedView = ({ videos }: HomeProps) => {
   console.log("LikedView Rendered");
   const userLiked = useAppSelector((state: RootState) => state.user.Liked);
 
-  const filteredVideos = videos.filter((video) => userLiked.includes(video.id));
+  const filteredVideos = videos.filter((video) => userLiked.includes(video._id));
   const navigate = useNavigate();
   function handleVideoClick(videoId: String) {
     navigate(`/player/${videoId}`);
@@ -22,8 +22,8 @@ const LikedView = ({ videos }: HomeProps) => {
       <h1>Liked Videos</h1>
       <List>
         {filteredVideos.map((video) => (
-          <ListItem key={video.id} style={{ display: "flex", alignItems: "center" }}>
-            <ListItemButton onClick={() => handleVideoClick(video.id)}>
+          <ListItem key={video._id} style={{ display: "flex", alignItems: "center" }}>
+            <ListItemButton onClick={() => handleVideoClick(video._id)}>
               <img src={video.thumbnailUrl} alt={video.title} style={{ width: 100, height: 60, marginRight: 16 }} />
               <ListItemText primary={video.title} />
             </ListItemButton>
